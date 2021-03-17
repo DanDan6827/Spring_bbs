@@ -1,5 +1,8 @@
 package com.ict.model;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Paging {
 	private int nowPage = 1;//현재 페이지
 	private int nowBlock = 1;//현재 블록

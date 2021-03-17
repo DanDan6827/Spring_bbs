@@ -29,14 +29,7 @@ public class MyController {
 	@Autowired
 	private Paging paging;
 	
-
-	public void setDao(DAO dao) {
-		this.dao = dao;
-	}
 	
-	public void setPaging(Paging paging) {
-		this.paging = paging;
-	}
 	@RequestMapping(value = "list.do",method = RequestMethod.GET)
 	public ModelAndView getlistCommand(HttpServletRequest request) {
 		String cPage = request.getParameter("cPage");

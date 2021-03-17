@@ -1,30 +1,18 @@
 package com.ict.db;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+@Repository
 public class DAO {
+	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
-	private DataSourceTransactionManager transactionManager;
 
-	public void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
-		this.sqlSessionTemplate = sqlSessionTemplate;
-	}
-	
-	//delete했을때 댓글 이 있으면 삭제가 안됀다.
-	//이때 트랜 젝션 처리 를 해야 함
-	public void setTransactionManager(DataSourceTransactionManager transactionManager) {
-		this.transactionManager = transactionManager;
-	}
-
-	
 	
 	//페이징 기법 전
 	public List<BVO> getList() {
